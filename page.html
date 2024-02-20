@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sub webpage</title>
+        
+        <style>
+            .box3{
+                display:none
+            }
+            .box3:target{
+                display: block;
+            }
+            .square_box{
+                width:480px;
+                height: 520px;
+                border:1px solid;
+                margin-top: 120px;
+                margin-left: 500px;
+                background-color: white;
+                border-radius: 5px;
+            }
+            .box1{
+                text-align: center;
+            }
+            .box2{
+                display: flex;
+            }
+            .box2 a{
+                text-decoration: none;
+            }
+            .in,.up{
+                font-size: 20px;
+                width:250px;
+                height:40px;
+                cursor: pointer;
+            }
+            #info1{
+                padding-left: 50px;
+                padding-top: 40px;
+                line-height: 2;    
+            }
+            #info2{
+                padding-left: 70px;
+                padding-top: 40px;
+                line-height: 2;     
+            }
+            #email,#password{
+                width: 350px;
+                height:35px;
+            }
+            #submit{
+                width:350px;
+                height:40px;
+                margin-top: 40px;
+                margin-left:5px;
+                font-size: 20px;
+                cursor: pointer;
+                background-color: #4ACD18 ;
+            }
+            #register{
+                width:305px;
+                height:44px;
+                margin-top: 35px;
+                background-color: #4ACD18 ;
+                font-size: 20px;
+            }
+            #Name,#Password,#Email{
+                width:300px;
+                height:35px;
+            }
+            body{
+                background-image: url('https://miro.medium.com/v2/resize:fit:1400/1*ZGB0kIijH91jRk5xmLgf9A.png');
+                background-repeat: no-repeat;
+                background-size: cover;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="square_box">
+            <div class="box1">
+                <h2>Please login to continue</h2>
+            </div>
+            <div class="box2">
+                <button class="in"><a href="#info1"><b>Admin</b></a></button>
+                <button class="up"><a href="#info2"><b>Employee</b></a></button>
+            </div>
+            <div id="info1" class="box3">
+                <label for="email" id="email" style="font-size: 20px;">Email</label>
+                <br><input id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                <br><label for="password" style="font-size: 20px;">Password</label>
+                <br><input id="password" pattern="(?=.[A-Z])(?=.[!@#$%^&])(?=.[0-9].[0-9])(?=.[a-zA-Z].*[a-zA-Z]).{8,}">
+                <br><button id="submit">Sign in</button>
+                <p style="padding-left: 60px; font-size:20px;">Don't have an acount?<a href="#info2">Register</a></p>
+            </div>
+            <div id="info2" class="box3">
+                <label for="name" id="name">Full Name</label>
+                <br><input type="name" id="Name">
+                <br><label for="email" id="email">Email</label>
+                <br><input type="email" id="Email">
+                <br><label for="password" id="password">Password</label>
+                <br><input type="password" id="Password">
+                <br><button id="register">Register</button>
+                <p style="padding-left: 40px; font-size:20px;">Already have an account?<a href="#info1">Login</a></p>
+            </div>
+            
+        </div>
+        <script>
+            const passwordInput = document.getElementById('password');
+        
+            passwordInput.addEventListener('input', function() {
+            const maskedPassword = '*'.repeat(this.value.length);
+            this.value = maskedPassword;
+            });
+            
+        
+        </script>
+    </body>
+</html>
